@@ -61,6 +61,7 @@ Public Class TwoThirdStrategyInstrument
         If Me.ParentStrategy.GetTotalPLAfterBrokerage <= Math.Abs(Me.ParentStrategy.UserSettings.MaxLossPerDay) * -1 Then
             CType(Me.ParentStrategy, TwoThirdStrategy).MaxStoplossReached = True
             CType(Me.ParentStrategy, TwoThirdStrategy).SendMTMNotification()
+
         ElseIf Me.ParentStrategy.GetTotalPLAfterBrokerage >= Me.ParentStrategy.UserSettings.MaxProfitPerDay Then
             CType(Me.ParentStrategy, TwoThirdStrategy).MaxTargetReached = True
             CType(Me.ParentStrategy, TwoThirdStrategy).SendMTMNotification()
